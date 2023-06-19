@@ -35,7 +35,7 @@ def listing_create(request):
     }
     return render(request, 'listing_create.html', context)
     
-def listing_uptdate(request):
+def listing_uptdate(request, pk):
     
     listing = Listing.objects.get(id=pk)
     
@@ -52,4 +52,10 @@ def listing_uptdate(request):
         'form': form
     }
     return render(request, 'listing_update.html', context)
+
+def listing_delete(request, pk):
+    
+    listing = Listing.objects.get(id=pk)
+    listing.delete()
+    return redirect('/')
     
