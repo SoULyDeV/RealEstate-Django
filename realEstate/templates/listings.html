@@ -2,10 +2,11 @@
 
 {% block content %}
 
+<a href="/add_listing/" class="text-blue-500">Create a new Listing</a>
 
 {% for listing in listings %}
-
-    <div class="px-3 py-2 bg-gray-100 rounded-sm">
+    <div class="mb-5 mt-5 px-3 py-2 bg-gray-100 rounded-sm">
+        <img src="{{ listing.image.url }}" alt="">
         <h3 class="text-3xl text-teal-500">{{ listing.title }}</h3>
         <a href="/listing/{{ listing.id }}/" class="text-blue-500">View details</a>
     </div>
